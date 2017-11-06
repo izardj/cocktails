@@ -10,6 +10,7 @@ import { Cocktail } from '../../shared/models/cocktail.model';
 export class CocktailsListComponent implements OnInit {
   @Input() cocktails: Cocktail[];
   @Output() public pick: EventEmitter<number> = new EventEmitter<number>();
+  public activeCocktail = 0;
 
   constructor() { }
 
@@ -17,7 +18,9 @@ export class CocktailsListComponent implements OnInit {
   }
 
   pickCocktail(index: number): void {
+    this.activeCocktail = index;
     this.pick.emit(index);
+
   }
 
 }
