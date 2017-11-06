@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Cocktail } from '../../shared/cocktail.model';
 
@@ -8,6 +8,7 @@ import { Cocktail } from '../../shared/cocktail.model';
   styleUrls: ['./cocktails-list.component.css']
 })
 export class CocktailsListComponent implements OnInit {
+  @Input() cocktails: Cocktail[];
   constructor() { }
 
   ngOnInit() {
