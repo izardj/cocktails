@@ -21,4 +21,8 @@ export class CocktailContainerComponent implements OnInit {
     this.cocktail = this.cocktails[0];
   }
 
+  public updateCocktail(index: number): void {
+    this.cocktail = this.cocktails[index];
+  }
+
 }

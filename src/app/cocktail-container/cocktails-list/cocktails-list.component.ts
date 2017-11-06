@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Cocktail } from '../../shared/cocktail.model';
 
@@ -9,9 +9,15 @@ import { Cocktail } from '../../shared/cocktail.model';
 })
 export class CocktailsListComponent implements OnInit {
   @Input() cocktails: Cocktail[];
+  @Output() public pick: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  pickCocktail(index: number): void {
+    this.pick.emit(index);
   }
 
 }
