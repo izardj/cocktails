@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Cocktail } from '../cocktail.model';
+import { Cocktail } from '../shared/cocktail.model';
 
 @Component({
-  selector: 'app-cocktails-list',
-  templateUrl: './cocktails-list.component.html',
-  styleUrls: ['./cocktails-list.component.css']
+  selector: 'app-cocktail-container',
+  templateUrl: './cocktail-container.component.html',
+  styleUrls: ['./cocktail-container.component.css']
 })
-export class CocktailsListComponent implements OnInit {
+export class CocktailContainerComponent implements OnInit {
   public cocktails: Cocktail[] = [
     new Cocktail('Mojito', 'https://assets.epicurious.com/photos/560d78877b55306961bf340c/1:1/w_600%2Ch_600/242527.jpg', 'Mojito is a traditional Cuban highball. Traditionally, a mojito is a cocktail that consists of five ingredients: white rum, sugar, lime juice, soda water, and mint.'),
     new Cocktail('Margarita', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Margarita.jpg/150px-Margarita.jpg', 'A margarita is a cocktail consisting of tequila, triple sec, and lime or lemon juice, often served with salt or sugar on the rim of the glass. The drink is served shaken with ice, blended with ice, or without ice.'),
