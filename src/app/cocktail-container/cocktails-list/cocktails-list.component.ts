@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Cocktail } from '../../shared/cocktail.model';
+import { Cocktail } from '../../shared/models/cocktail.model';
 
 @Component({
   selector: 'app-cocktails-list',
