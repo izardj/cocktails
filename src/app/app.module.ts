@@ -10,6 +10,7 @@ import { PanierComponent } from './panier/panier.component';
 import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
 import { ActiveDirective } from './shared/directives/active.directive';
 import { AppRouting } from './app.routing';
+import { PanierService } from './shared/services/panier.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { AppRouting } from './app.routing';
     BrowserModule,
     AppRouting
   ],
-  providers: [],
+  providers: [
+    PanierService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
