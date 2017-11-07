@@ -10,7 +10,6 @@ import { CocktailService } from '../../shared/services/cocktail.service';
 })
 export class CocktailsListComponent implements OnInit {
   public cocktails: Cocktail[];
-  public activeCocktail = 0;
 
   constructor(private cocktailService: CocktailService) { }
 
@@ -18,11 +17,6 @@ export class CocktailsListComponent implements OnInit {
     this.cocktailService.cocktails.subscribe( (cocktails: Cocktail[]) => {
       this.cocktails = cocktails;
     });
-  }
-
-  pickCocktail(index: number): void {
-    this.activeCocktail = index;
-    this.cocktailService.selectCocktail(index);
   }
 
 }
