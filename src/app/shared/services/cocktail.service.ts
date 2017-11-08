@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
+
 import { Cocktail } from '../models/cocktail.model';
 import { Ingredient } from '../models/ingredient.model';
 import { HttpClient } from '@angular/common/http';
@@ -9,11 +13,19 @@ export class CocktailService {
   public cocktails: BehaviorSubject<Cocktail[]> = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) {
-
+    this.initCocktails();
   }
 
-  getCocktail(index: number): Cocktail {
-    return this.cocktails.value[index];
+  initCocktails(): void {
+    this.http.get<Cocktail[]>('https://cocktails-525d8.firebaseio.com/cocktails.json').subscribe( cocktails => {
+      this.cocktails.next(cocktails);
+    });
+  }
+
+  getCocktail(index: number): Observable<Cocktail> {
+    return this.cocktails
+      .filter(cocktails => cocktails != null)
+      .map((cocktails: Cocktail[]) => cocktails[index]);
   }
 
   addCocktail(cocktail: Cocktail): void {

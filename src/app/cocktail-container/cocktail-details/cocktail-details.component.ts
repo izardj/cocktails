@@ -24,7 +24,9 @@ export class CocktailDetailsComponent implements OnInit {
       } else {
         this.index = 0;
       }
-      this.cocktail = this.cocktailService.getCocktail(this.index);
+      this.cocktailService.getCocktail(this.index).subscribe( (cocktail: Cocktail) => {
+        this.cocktail = cocktail;
+      });
     });
   }
 
