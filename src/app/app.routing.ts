@@ -10,7 +10,7 @@ const APP_ROUTE: Route[] = [
   { path: 'panier', component: PanierComponent},
   { path: 'cocktails', component: CocktailContainerComponent, children: [
     { path: '', component: CocktailDetailsComponent},
-    { path: ':index/new', component: CocktailEditComponent},
+    { path: 'new', component: CocktailEditComponent},
     { path: ':index', component: CocktailDetailsComponent},
     { path: ':index/edit', component: CocktailEditComponent}
   ]}
