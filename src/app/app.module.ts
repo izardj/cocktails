@@ -13,6 +13,7 @@ import { ActiveDirective } from './shared/directives/active.directive';
 import { AppRouting } from './app.routing';
 import { PanierService } from './shared/services/panier.service';
 import { CocktailEditComponent } from './cocktail-container/cocktail-edit/cocktail-edit.component';
+import { FilterPipe } from './shared/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CocktailEditComponent } from './cocktail-container/cocktail-edit/cockta
     ActiveDirective,
     PanierComponent,
     IngredientsListComponent,
-    CocktailEditComponent
+    CocktailEditComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
