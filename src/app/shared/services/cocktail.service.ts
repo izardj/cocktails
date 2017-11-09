@@ -44,6 +44,11 @@ export class CocktailService {
     const index = cocktails.map( c => c.name ).indexOf(editCocktail.name);
     cocktails[index] = editCocktail;
     this.cocktails.next(cocktails);
+    this.save();
+  }
+
+  save(): void {
+    this.http.put('https://cocktails-525d8.firebaseio.com/cocktails.json', this.cocktails.value).subscribe( res => console.log(res));
   }
 
 }
