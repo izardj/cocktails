@@ -12,7 +12,31 @@ export class PanierService {
   addIngredients(ingredients: Ingredient[]): void {
     const currentValue = this.panier.value;
     if (currentValue && currentValue.length) {
-      this.panier.next(currentValue.concat(ingredients));
+      const panier = currentValue.map(ing => {
+        return {
+          savedIng: ing,
+          addedIng: ingredients.find(i => i.name === ing.name)
+        };
+      });
+      const untouchedPanierIngredients = panier
+        .filter(ing => ing.addedIng == null)
+        .map(el => el.savedIng);
+
+      const addedIngredients = panier
+        .filter(ing => ing.addedIng != null)
+        .map(ing => {
+          return {
+            name: ing.savedIng.name,
+            quantity: ing.savedIng.quantity + ing.addedIng.quantity
+          };
+        });
+
+        const newIngredients = ingredients.filter( ing => {
+          return currentValue.find(i => i.name === ing.name) == null;
+        });
+
+
+      this.panier.next([...untouchedPanierIngredients, ...addedIngredients, ...newIngredients]);
     } else {
       this.panier.next(ingredients);
     }
