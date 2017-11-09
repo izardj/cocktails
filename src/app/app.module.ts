@@ -4,8 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { PanierComponent } from './panier/panier.component';
-import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
 import { ActiveDirective } from './shared/directives/active.directive';
 import { AppRouting } from './app.routing';
 import { PanierService } from './shared/services/panier.service';
@@ -17,8 +15,6 @@ import { SharedModule } from './shared/modules/shared.module';
   declarations: [
     AppComponent,
     ActiveDirective,
-    PanierComponent,
-    IngredientsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +22,6 @@ import { SharedModule } from './shared/modules/shared.module';
     HttpClientModule,
     AppRouting,
     CocktailModule,
-    cocktailRouting,
     SharedModule
   ],
   providers: [
