@@ -42,6 +42,9 @@ export class CocktailService {
   editCocktail(editCocktail: Cocktail): void {
     const cocktails = this.cocktails.value.slice();
     const index = cocktails.map( c => c.name ).indexOf(editCocktail.name);
+    if ( index === -1 ) {
+      return;
+    }
     cocktails[index] = editCocktail;
     this.cocktails.next(cocktails);
     this.save();

@@ -58,4 +58,8 @@ export class CocktailEditComponent implements OnInit {
       this.cocktailService.addCocktail(this.cocktailForm.value);
     }
   }
+
+  get ingredients(): FormControl[] {
+    return (<FormArray>this.cocktailForm.get('ingredients')).controls as FormControl[];
+  }
 }
