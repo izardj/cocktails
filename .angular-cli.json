@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
       "scripts": [
         "../node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -58,6 +58,12 @@
   },
   "defaults": {
     "styleExt": "css",
+<<<<<<< HEAD
+=======
+    "class": {
+      "spec": false
+    },
+>>>>>>> 79a8eb8a422fec7157f626cf6b263373f4bd76e8
     "component": {}
   }
 }
