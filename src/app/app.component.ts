@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Cocktail } from './shared/models/cocktail.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
